@@ -1,22 +1,23 @@
+import { Controller } from '../controllers'
 export const routesServer = {
     findProvider: {
         verb: 'get',
         mountPoint: '/',
-        handler: 'findProvider Controller'
+        handler: Controller.findProviders
     },
     createProvider: {
         verb: 'post',
         mountPoint: '/provider',
-        handler: 'createProvider Controller'
+        handler: Controller.createProvider
     },
     updateProvider: {
         verb: 'patch',
         mountPoint: '/provider',
-        handler: 'updateProvider Controller'
+        handler: Controller.updateProvider
     },
     deleteProvider: {
         verb: 'delete',
         mountPoint: '/provider',
-        handler: 'DeleteProvider Controller'
+        handler: Controller.deleteProvider
     }
 }
