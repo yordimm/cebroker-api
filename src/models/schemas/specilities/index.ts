@@ -9,4 +9,4 @@ export const SpecialitySchema: Schema = new Schema({
     updatedBy: { required: true, type: Number }
 }, { timestamps: true })
 
-export const Hotel: Model<SpecialityModel> = model<SpecialityModel>('Speciality', SpecialitySchema)
+export const Speciality: Model<SpecialityModel> = model<SpecialityModel>('Speciality', SpecialitySchema)
