@@ -1,7 +1,18 @@
-import express from 'express'
+import { InfraWeb } from './core/index'
+import { middlewareServer } from './middleware'
+import { routesServer } from './routes'
+import { connection } from './connection'
 
-const app = express()
-const port = 3000
+export default class Server extends InfraWeb {
+    constructor() {
+        super()
+        connection()
+        this.use(middlewareServer)
+        this.mountRoutes(routesServer)
+    }
+    public static bootstrap(): Server {
+        return new Server()
+    }
+}
 
-app.get('/', (req, res) => res.send('**'))
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+Server.bootstrap().listen()
