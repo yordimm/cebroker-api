@@ -18,7 +18,7 @@ export abstract class InfraWeb {
         Object.keys(routes).forEach((key) => {
             this.app[routes[key].verb](routes[key].mountPoint, routes[key].handler)
         })
-     }
+    }
 
     public listen() {
         const port: number = 3200

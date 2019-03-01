@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nodemon": "nodemon --exec ts-node ./src/index.ts",
+    "test": "jest",
     "tsc": "tsc",
     "start": "npm run tsc && npm run nodemon"
   },
