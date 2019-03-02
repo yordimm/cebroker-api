@@ -6,7 +6,6 @@ export const Services = {
     findProviders: async (query: string) => {
         try {
             const data = await (typeof query !== 'undefined' ? Provider.find(query) : Provider.find())
-            console.log(data)
             return data.length > 0 ? {
                 success: true,
                 message: 'Success Finding The Providers',
@@ -24,7 +23,6 @@ export const Services = {
         }
     },
     createProvider: async (provider: ProviderInterface) => {
-        console.log(provider)
         try {
             const data = await Provider.create(Object.assign({}, provider))
             return {
@@ -42,8 +40,6 @@ export const Services = {
     },
     updateProvider: async (id: String, provider: ProviderInterface) => {
         try {
-            console.log(id)
-            console.log(provider)
             const data = await Provider.findByIdAndUpdate(id, provider)
             return data ? {
                 success: true,
@@ -63,7 +59,6 @@ export const Services = {
     },
     deleteProvider: async (id: String) => {
         try {
-            console.log(id)
             const data = await Provider.findByIdAndDelete(id)
             return data ? {
                 success: true,
